@@ -38,9 +38,7 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
-# anonymize ... for obvious reasons
-anonymizeData.r
-# ... and intermediate data files (products of prepareInp.r)
+# intermediate data files (products of prepareInp.r) and my output
 /Data
 # and my output
 run*.txt
