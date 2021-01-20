@@ -17,12 +17,8 @@ List of dates and observers:
   * observer.csv  
   
   
-Script to produce MARK input files (in `/Data` directory):  
+Shell script:  
   
-  * `prepareinp.r`  
-  
-  
-Scripts (minor variation for each year):  
-  
-  * `analysis201X.r`, which source `MARKformulas.r`  
+  * runs `prepareinp.r` produces MARK input files as .RDS file in a `/Data` directory  
+  * runs the `analysis201X.r` scripts (each of which sources `MARKformulas.r`) within a call to `sink()` to write the output to text files  
   

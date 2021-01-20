@@ -61,12 +61,13 @@ msCJS1$deltaAICc <- msCJS1$AICc - min(msCJS1$AICc)
 (msCJS1 <- msCJS1[order(msCJS1$AICc),])
 
 ## weather, possibly ...
-plot(NoMe.phidot.ptime$results$real$estimate[2:23], type = "o", pch = 16,
-     xaxt = "n", xlab = "", ylab = "p(detection)", ylim = c(0, 1), yaxs = "i")
-axis(1, at = 1:26, las = 2,
-     labels = seq(as.Date("2017-06-28"), as.Date("2017-07-23"), by = "day"))
-points(NoMe.phidot.ptime$results$real$ucl[2:23], pch = 2, type = "o")
-points(NoMe.phidot.ptime$results$real$lcl[2:23], pch = 6, type = "o")
+plot(NoMe.phidot.ptime$results$real$estimate[2:(nrow(obsY)-1)],
+     type = "o", pch = 16,
+     xaxt = "n", xlab = "",
+     ylab = "p(detection)", ylim = c(0, 1), yaxs = "i")
+axis(1, at = 1:(nrow(obsY)-1), las = 2, labels = obsY[2:.N,DATE])
+points(NoMe.phidot.ptime$results$real$ucl[2:(nrow(obsY)-1)], pch = 2, type = "o")
+points(NoMe.phidot.ptime$results$real$lcl[2:(nrow(obsY)-1)], pch = 6, type = "o")
 
 ## CJS _with_ sex as a covariate -- n.b. some marked butterflies did not have sex determined
 NoMe.CJS2 <- process.data(dat7[!is.na(sex)], groups = "sex")
@@ -119,12 +120,13 @@ msCJS2$deltaAICc <- msCJS2$AICc - min(msCJS2$AICc)
 (msCJS2 <- msCJS2[order(msCJS2$AICc),])
 
 ## weather, possibly ...
-plot(NoMe.phidot.ptim2$results$real$estimate[2:23], type = "o", pch = 16,
-     xaxt = "n", xlab = "", ylab = "p(detection)", ylim = c(0, 1), yaxs = "i")
-axis(1, at = 1:26, las = 2,
-     labels = seq(as.Date("2017-06-28"), as.Date("2017-07-23"), by = "day"))
-points(NoMe.phidot.ptim2$results$real$ucl[2:23], pch = 2, type = "o")
-points(NoMe.phidot.ptim2$results$real$lcl[2:23], pch = 6, type = "o")
+plot(NoMe.phidot.ptim2$results$real$estimate[2:(nrow(obsY)-1)],
+     type = "o", pch = 16,
+     xaxt = "n", xlab = "",
+     ylab = "p(detection)", ylim = c(0, 1), yaxs = "i")
+axis(1, at = 1:(nrow(obsY)-1), las = 2, labels = obsY[2:.N,DATE])
+points(NoMe.phidot.ptim2$results$real$ucl[2:(nrow(obsY)-1)], pch = 2, type = "o")
+points(NoMe.phidot.ptim2$results$real$lcl[2:(nrow(obsY)-1)], pch = 6, type = "o")
 
 ## different detection by sex
 NoMe.phidot.psex$results$real

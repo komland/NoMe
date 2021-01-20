@@ -18,9 +18,11 @@ effort[year(DATE)==2017, OBSERVER:="A"]
 # 2018 gloss over blip that I don't know who was there 07-15
 effort[DATE %between% c("2018-06-29", "2018-07-08"), OBSERVER:="B"]
 effort[DATE %between% c("2018-07-09", "2018-07-21"), OBSERVER:="C"]
-# 2019
+# 2019 insert 7-13
+effort <- rbind(effort,
+                data.table(DATE = as.Date("2019-07-13"), SAMPLER = " ", OBSERVER = " "))
 effort[DATE %between% c("2019-06-28", "2019-07-07"), OBSERVER:="A"]
 effort[DATE %between% c("2019-07-08", "2019-07-14"), OBSERVER:="D"]
 effort[DATE %between% c("2019-07-15", "2019-07-18"), OBSERVER:="E"]
 effort[,SAMPLER:=NULL]
-fwrite(effort, "observer.csv")
+fwrite(effort[order(DATE)], "observer.csv")
