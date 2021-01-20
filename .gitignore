@@ -42,3 +42,8 @@ vignettes/*.pdf
 /Data
 # and my output
 run*.txt
+# and MARK frass
+*.inp
+*.out
+*.res
+*.vcv
