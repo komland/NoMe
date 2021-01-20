@@ -37,3 +37,13 @@ vignettes/*.pdf
 
 # R Environment Variables
 .Renviron
+
+# intermediate data files (products of prepareInp.r) and my output
+/Data
+# and my output
+run*.txt
+# and MARK frass
+*.inp
+*.out
+*.res
+*.vcv
