@@ -9,6 +9,14 @@ effort[,fDate := as.IDate(DATE)]
 dat4 <- setDT(fread("resight.csv"))
 dat4[,fDate := as.IDate(DATE)]
 
+## some simple data descriptions
+datDesc <- merge(dat4[,.N,year(fDate)],
+                 dat4[STATUS == "Unmarked",.(unm = .N),year(fDate)])
+datDesc[,pUnm := unm/N]
+datDesc
+
+dat4[STATUS == "Marked", .N, .(year(fDate), PATCH)][order(PATCH, year)]
+
 ## develop encounter history file for each year
 for(i in 1:3){
     y <- c(2017:2019)[i]
