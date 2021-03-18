@@ -24,4 +24,5 @@ R scripts:
   
   * `prepareinp.r` produces MARK input files as .RDS file in a `/Data` directory  
   * `analysis201X.r` in which `focalYr` can be specified (accommodating minor differences among the years)  
+  * `MARKformulas.r` to be `source()`-ed  
   
