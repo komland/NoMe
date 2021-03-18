@@ -38,6 +38,9 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 
+# graphs
+*.png
+
 # intermediate data files (products of prepareInp.r) and my output
 /Data
 # and my output
@@ -47,3 +50,4 @@ run*.txt
 *.out
 *.res
 *.vcv
+*.tmp
