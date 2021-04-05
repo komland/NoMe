@@ -51,3 +51,6 @@ run*.txt
 *.res
 *.vcv
 *.tmp
+
+# previewed README
+README.html
