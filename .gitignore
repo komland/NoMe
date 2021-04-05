@@ -19,6 +19,7 @@
 
 # RStudio files
 .Rproj.user/
+NoMe.Rproj
 
 # produced vignettes
 vignettes/*.html
@@ -51,3 +52,6 @@ run*.txt
 *.res
 *.vcv
 *.tmp
+
+# previewed README
+README.html
